@@ -70,11 +70,41 @@ pub fn forst() {
     println!();
 }
 
-/*pub fn sinefn() {
+pub fn sinefn() {
     println!();
     println!("\t == Sine Rule == ");
     println!();
-    println!("(1) Two angles and one side");
-    println!("(2) Two sides and one angle");
+    println!("(1) Two angles and one side => find the other side ");
+    println!("(2) Two sides and one angle => find the other angle ()");
     println!();
-}*/
+}
+
+pub fn taaos() {
+    println!();
+    println!("\t == Two angles and one side == ");
+    println!();
+}
+
+pub fn tsaoa() {
+    println!();
+    println!("\t == Two sides and one angle == ");
+    println!();
+}
+
+pub fn cosinefn() {
+	println!();
+	println!("\t == Cosine Rule == ");
+	println!();
+	println!("(1) Find a missing side");
+	println!();
+}
+
+pub fn fams() {
+    println!();
+    println!("\t == Finding a missing side == ");
+    println!();
+    println!("(1) finding a");
+    println!("(2) finding b");
+    println!("(3) finding c");
+    println!();
+}
