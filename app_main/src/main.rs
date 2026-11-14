@@ -1,17 +1,14 @@
-#[path = "../crate/extramath.rs"]
-mod extramath;
-#[path = "../crate/libprint.rs"]
-mod libprint;
-#[path = "../crate/read.rs"]
-mod read;
-
-use extramath::{
+use crates::extramath::{
     cah, calculate_by_pythagoras_add, calculate_by_pythagoras_sub, cosine_for_adj, cosine_for_hyp,
-    dicos, dinvc, dinvs, dinvt, disin, ditan, sine_for_hyp, sine_for_opp, soh, tangent_for_adj,
-    tangent_for_opp, toa, sin_two_angles_one_side, cosine_rule_1, sin_two_sides_one_angle
+    cosine_rule_1, dicos, dinvc, dinvs, dinvt, disin, ditan, sin_two_angles_one_side,
+    sin_two_sides_one_angle, sine_for_hyp, sine_for_opp, soh, tangent_for_adj, tangent_for_opp,
+    toa,
 };
-use libprint::{cosinefn, forra, forra_option_1, fams, forra_option_2, forst, mainmenu, rastc, sinefn, taaos, tsaoa, trignomenu};
-use read::{clear_terminal, read_number, read_string};
+use crates::libprint::{
+    cosinefn, fams, forra, forra_option_1, forra_option_2, forst, mainmenu, rastc, sinefn, taaos,
+    trignomenu, tsaoa,
+};
+use crates::read::{clear_terminal, read_number, read_string};
 
 fn main() {
     let mut answer: f64 = 0.0;
@@ -48,9 +45,6 @@ fn main() {
                     read = 1;
                     println!("Invalid Option");
                 }
-            }
-            if read == 0 {
-                println!("Answer = {}", answer);
             }
         } else if option == 2 {
             rastc();
@@ -102,8 +96,10 @@ fn main() {
                             } else if hypotenuse == 0.0 {
                                 answer = sine_for_hyp(sine, opposite);
                             } else {
-								read = 1;
-								println!("Values are completed, Please one of the values must be 0..");                               
+                                read = 1;
+                                println!(
+                                    "Values are completed, Please one of the values must be 0.."
+                                );
                             }
                         }
 
@@ -120,8 +116,10 @@ fn main() {
                             } else if hypotenuse == 0.0 {
                                 answer = cosine_for_hyp(cosine, adjacent);
                             } else {
-            					read = 1;
-								println!("Values are completed, Please one of the values must be 0..");
+                                read = 1;
+                                println!(
+                                    "Values are completed, Please one of the values must be 0.."
+                                );
                             }
                         }
 
@@ -139,7 +137,9 @@ fn main() {
                                 answer = tangent_for_adj(tangent, opposite);
                             } else {
                                 read = 1;
-								println!("Values are completed, Please one of the values must be 0..");
+                                println!(
+                                    "Values are completed, Please one of the values must be 0.."
+                                );
                             }
                         }
 
@@ -156,52 +156,54 @@ fn main() {
                     sinefn();
                     let (_, option) = read_number("Select an option: ");
                     if option == 1 {
-						taaos();
+                        taaos();
                         let (angle1, _) = read_number("Enter the first angle: ");
-                    	let (angle2, _) = read_number("Enter the second angle: ");
-                    	let (side, _) = read_number("Enter the first side: ");
-                    	answer = sin_two_angles_one_side(angle1, angle2, side); 	
+                        let (angle2, _) = read_number("Enter the second angle: ");
+                        let (side, _) = read_number("Enter the first side: ");
+                        answer = sin_two_angles_one_side(angle1, angle2, side);
                     } else if option == 2 {
-                    	tsaoa();
-                    	let (side1, _) = read_number("Enter the first side: ");
-                    	let (side2, _) = read_number("Enter the second side: ");
-                    	let (angle, _) = read_number("Enter the first angle: ");
-                    	answer = sin_two_sides_one_angle(side1, side2, angle);
+                        tsaoa();
+                        let (side1, _) = read_number("Enter the first side: ");
+                        let (side2, _) = read_number("Enter the second side: ");
+                        let (angle, _) = read_number("Enter the first angle: ");
+                        answer = sin_two_sides_one_angle(side1, side2, angle);
                     } else {
-                    	break;
+                        break;
                     }
                 } else if option == 2 {
                     cosinefn();
                     let (_, option) = read_number("Select an option: ");
                     if option == 1 {
-                    	fams();
-                    	let (_, option) = read_number("Select an option: ");
-                    	match option {
-                    		1 => {
-                    			let (b, _) = read_number("Enter value for b: ");
-                    			let (c, _) = read_number("Enter value for c: ");
-                    			let (biga, _) = read_number("Enter value for A: ");
-                    			answer = cosine_rule_1(b, c, biga);
-                    		}
+                        fams();
+                        let (_, option) = read_number("Select an option: ");
+                        match option {
+                            1 => {
+                                let (b, _) = read_number("Enter value for b: ");
+                                let (c, _) = read_number("Enter value for c: ");
+                                let (biga, _) = read_number("Enter value for A: ");
+                                answer = cosine_rule_1(b, c, biga);
+                            }
 
-                    		2 => {
-                    			let (a, _) = read_number("Enter value for a: ");
-                    			let (c, _) = read_number("Enter value for c: ");
-                    			let (bigb, _) = read_number("Enter value for B: ");
-                    			answer = cosine_rule_1(a, c, bigb);
-                    		}
+                            2 => {
+                                let (a, _) = read_number("Enter value for a: ");
+                                let (c, _) = read_number("Enter value for c: ");
+                                let (bigb, _) = read_number("Enter value for B: ");
+                                answer = cosine_rule_1(a, c, bigb);
+                            }
 
-                    		3 => {
-             			        let (a, _) = read_number("Enter value for a: ");
-                    			let (b, _) = read_number("Enter value for b: ");
-                    			let (bigc, _) = read_number("Enter value for C: ");
-                    			answer = cosine_rule_1(a, b, bigc);
-                    		}
+                            3 => {
+                                let (a, _) = read_number("Enter value for a: ");
+                                let (b, _) = read_number("Enter value for b: ");
+                                let (bigc, _) = read_number("Enter value for C: ");
+                                answer = cosine_rule_1(a, b, bigc);
+                            }
 
-                    		_ => { println!("Invalid option"); }
-                    	}
+                            _ => {
+                                println!("Invalid option");
+                            }
+                        }
                     } else {
-                    	break;
+                        break;
                     }
                 } else {
                     break;
@@ -213,7 +215,7 @@ fn main() {
             break;
         }
         if read == 0 {
-        	println!();
+            println!();
             println!("Answer = {}", answer);
             println!();
         }

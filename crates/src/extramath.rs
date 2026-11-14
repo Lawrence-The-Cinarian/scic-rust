@@ -96,20 +96,20 @@ pub fn tangent_for_adj(tangent: f64, opposite: f64) -> f64 {
 }
 
 pub fn sin_two_angles_one_side(angle_1: f64, angle_2: f64, side: f64) -> f64 {
-	let result = angle_1.to_radians().sin();
-	let result1 = angle_2.to_radians().sin();
-	let result = (side * result1) / result;
-	result
+    let result = angle_1.to_radians().sin();
+    let result1 = angle_2.to_radians().sin();
+    let result = (side * result1) / result;
+    result
 }
 
 pub fn sin_two_sides_one_angle(side_1: f64, side_2: f64, angle: f64) -> f64 {
-	let angle = angle.to_radians().sin();
-	let result = (side_2 * angle) / side_1;
-	result.asin().to_degrees()
+    let angle = angle.to_radians().sin();
+    let result = (side_2 * angle) / side_1;
+    result.asin().to_degrees()
 }
 
 pub fn cosine_rule_1(firstv: f64, secondv: f64, value: f64) -> f64 {
-	let value =  value.to_radians().cos();
-	let power = (firstv * firstv) + (secondv * secondv) - (2.0 * firstv * secondv * value);
-	power.sqrt()
+    let value = value.to_radians().cos();
+    let power = (firstv * firstv) + (secondv * secondv) - (2.0 * firstv * secondv * value);
+    power.sqrt()
 }

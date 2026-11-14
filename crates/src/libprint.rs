@@ -1,6 +1,7 @@
+use colored::Colorize;
 pub fn mainmenu() {
     println!();
-    println!("\t == Cinari's Scientific Calculator == ");
+    println!("{}", "\t == Cinari's Scientific Calculator == ".blue());
     println!();
     println!(
         "Instructions: Enter any of your preferred options,\nPress any number apart from these two below to exit"
@@ -92,11 +93,11 @@ pub fn tsaoa() {
 }
 
 pub fn cosinefn() {
-	println!();
-	println!("\t == Cosine Rule == ");
-	println!();
-	println!("(1) Find a missing side");
-	println!();
+    println!();
+    println!("\t == Cosine Rule == ");
+    println!();
+    println!("(1) Find a missing side");
+    println!();
 }
 
 pub fn fams() {

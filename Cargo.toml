@@ -1,6 +1,9 @@
-[package]
-name = "scic-rust"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+members = [
+    "app_main",
+    "crates",
+]
+resolver = "3"
 
-[dependencies]
+[workspace.dependencies]
+crates = { path = "crates" }
