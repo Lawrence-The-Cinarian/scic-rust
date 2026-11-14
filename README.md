@@ -5,6 +5,15 @@ Cinari’s Scientific Calculator is an interactive terminal application for trig
 ### How to clone and run
 
 Step 1:
+
+On your linux terminal run
 ``` 
 git clone https://github.com:Lawrence-The-Cinarian/scic-rust.git
+```
+Step 2:
+
+Run cargo
+
+```
+cargo run
 ```
